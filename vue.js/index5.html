@@ -10,9 +10,9 @@
     <div id="app">
       <ul>
         <li v-for="fruta in frutas_con_id" v-bind:key="fruta">
-          {{fruta.id}} - {{fruta.nombre}}
+          {{fruta.id}}-{{fruta.nombre}}
           <ul>
-            <li v-for="pais in fruta.paises_origen"> Pais : {{pais.id}}  {{pais.pais}} </li>
+            <li v-for="pais in fruta.paises_origen"> Pais:{{pais.id}} {{pais.pais}} </li>
           </ul>
         </li>
       </ul>
@@ -28,7 +28,7 @@
             frutas_con_id: [
               {
                 id: 1,
-                nombre: "Manzana",
+                nombre:"Manzana",
                 paises_origen:[
                     {
                         id_pais:1,
@@ -42,8 +42,8 @@
                 ]
               },
               {
-                id: 2,
-                nombre: "Pera",
+                id:2,
+                nombre:"Pera",
                 paises_origen:[
                     {
                         id_pais:3,
@@ -57,8 +57,8 @@
                 ]
               },
               {
-                id: 3,
-                nombre: "Uva",
+                id:3,
+                nombre:"Uva",
                 paises_origen: null
               },
             ],
