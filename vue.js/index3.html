@@ -1,0 +1,38 @@
+<!--binding/enlace de doble via con v-model:interaccion del usuario en etiqueta html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO-3</title>
+  </head>
+  <body>
+    <div id="app">
+      <label>ESCRIBE TU NOMBRE</label>
+      <input type="text" v-model="nombre" />
+      <hr />
+      <h5>HOLA {{nombre}}</h5>
+      <select v-model="fruta">
+        <option value="MANZANA">MANZANA</option>
+        <option value="PLATANO">PLATANO</option>
+        <option value="FRUTILLA">FRUTILLA</option>
+      </select>
+      FRUTA SELECCIONADA : {{fruta}}
+      <input type="checkbox" v-model="activo" />
+      {{activo}}
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = {
+        data() {
+          return {
+            nombre: "",
+            fruta: "",
+            activo: false,
+          };
+        },
+      };
+      var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>

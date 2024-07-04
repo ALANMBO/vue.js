@@ -1,0 +1,71 @@
+<!--BUCLES ANIDADOS CON V-FOR OBTENER EL INDICE DEL ARREGLO CREAR UN BUCLE A PARTIR DE UN RANGO-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO-5</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="fruta in frutas_con_id" v-bind:key="fruta">
+          {{fruta.id}} - {{fruta.nombre}}
+          <ul>
+            <li v-for="pais in fruta.paises_origen"> Pais : {{pais.id}}  {{pais.pais}} </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      //v-for
+      const app = {
+        data() {
+          return {
+            frutaId: 2,
+            frutas: ["Manzana", "Pera", "Uva"],
+            frutas_con_id: [
+              {
+                id: 1,
+                nombre: "Manzana",
+                paises_origen:[
+                    {
+                        id_pais:1,
+                        pais:'El SALVADOR'
+                    },
+                    {
+                        id_pais:2,
+                        pais:'Guatemala'
+                    },
+                    
+                ]
+              },
+              {
+                id: 2,
+                nombre: "Pera",
+                paises_origen:[
+                    {
+                        id_pais:3,
+                        pais:'Honduras'
+                    },
+                    {
+                        id_pais:4,
+                        pais:'Nicaragua'
+                    },
+                    
+                ]
+              },
+              {
+                id: 3,
+                nombre: "Uva",
+                paises_origen: null
+              },
+            ],
+          };
+        },
+      };
+      var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>

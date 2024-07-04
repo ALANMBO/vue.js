@@ -1,0 +1,26 @@
+<!--BINDING DE ATRIBUTOS HTML CON V-BIND[VUE.JS3]-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO-2</title>
+  </head>
+  <body>
+    <div id="app">
+        <label v-bind:title="titulo">HOLA MUNDO!!!!!!</label>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = {
+        data() {
+            return {
+                titulo : "ES UN TITULO ES DINAMICO"
+            }
+        }
+       
+      }
+      var mountedApp = Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>

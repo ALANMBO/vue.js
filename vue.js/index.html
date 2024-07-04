@@ -1,0 +1,50 @@
+<!--LLAMADA DE METODOS Y MANIPULACION DE DATOS LA REACTIVIDAD DE VUE EJEMPLO 1-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue.js</title>
+  </head>
+  <body>
+    <div id="app">
+      contador : {{contador}}
+      <button type="button" v-on:click="stopInterval">{{btnMessage}}</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const holaMundo = {
+        data() {
+          return {
+            contador: 0,
+            interval: null,
+            isRunning: false,
+            btnMessage: "DETENER",
+          };
+        },
+        mounted() {
+          this.interval = setInterval(() => {
+            this.contador++;
+          }, 1000);
+          this.isRunning = true;
+        },
+        methods: {
+          stopInterval() {
+            if (this.isRunning) {
+              clearInterval(this.interval);
+              this.isRunning = false;
+              this.btnMessage = "CONTINUAR";
+            } else {
+              this.interval = setInterval(() => {
+                this.contador++;
+              }, 1000);
+              this.isRunning = true;
+              this.btnMessage = "DETENER";
+            }
+          },
+        },
+      };
+      var mountedApp = Vue.createApp(holaMundo).mount("#app");
+    </script>
+  </body>
+</html>
