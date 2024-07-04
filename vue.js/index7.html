@@ -1,0 +1,68 @@
+<!--EJEMPLO DE CREACION DE TABLA -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO-6</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+</head>
+<body> 
+    <div id="app">
+        <div class="container">
+            <table class="striped bordered">
+                <thead>
+                    <tr>
+                        <th>NOMBRE :</th>
+                        <th>USUARIO :</th>
+                        <th>CORREO :</th>
+                        <th>DIRECCIÓN :</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="usuario in usuarios" :key="usuario.id">
+                        <td>{{ usuario.name }}</td>
+                        <td>{{ usuario.username }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>
+                            <ul>
+                                <li>CIUDAD :{{ usuario.address.city }}</li>
+                                <li>CALLE :{{ usuario.address.street }}</li>
+                                <li>ZIP :{{ usuario.address.zipcode }}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    const app = {
+        data() {
+            return {
+                usuarios: []
+            };
+        },
+        methods: {
+            getUsuarios() {
+                fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(data => {
+                    this.usuarios = data;
+                });
+            }
+        },
+        mounted() {
+            this.getUsuarios();
+        }
+    };
+    Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
