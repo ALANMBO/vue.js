@@ -14,12 +14,12 @@
       <hr />
       <ul>
         <li v-for="fruta in frutas_con_id" v-bind:key="fruta">
-          {{fruta.id}} - {{fruta.nombre}}
+          {{fruta.id}}-{{fruta.nombre}}
         </li>
       </ul>
       <select v-model="frutaId">
         <option v-for="fruta in frutas_con_id" v-bind:value>
-          {{fruta.nombre}}
+        {{fruta.nombre}}
         </option>
       </select>
     </div>
@@ -33,16 +33,16 @@
             frutas: ["Manzana", "Pera", "Uva"],
             frutas_con_id: [
               {
-                id: 1,
-                nombre: "Manzana",
+                id:1,
+                nombre:"Manzana",
               },
               {
-                id: 2,
-                nombre: "Pera",
+                id:2,
+                nombre:"Pera",
               },
               {
-                id: 3,
-                nombre: "Uva",
+                id:3,
+                nombre:"Uva",
               },
             ],
           };
