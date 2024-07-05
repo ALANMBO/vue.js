@@ -90,3 +90,35 @@ switch(dia){
     case 5 : console.log("cinco");break;
     default:console.log("EL NUMERO INGRESADO NO EXISTE");break;
 }
+
+/* Ejercicio con bucle for:
+Escribe un bucle for que recorra los números del 1 al 10 y 
+sume todos los números pares. Al final, debe imprimir la suma de estos números pares. */
+let suma = 0
+for(let i = 0 ; i <= 10 ; i++){
+    if(i % 2 == 0 ){
+        suma += i
+    }
+}
+console.log(suma)
+
+/* Factorial de un número: Calcula el factorial de un número dado utilizando un bucle while. 
+El factorial de un número n se define como el producto de todos los enteros positivos menores o iguales a n. */
+
+let fac = 1
+let n = 5 
+while(n > 1){
+    fac *= n
+    n--
+}
+console.log(fac)
+
+
+/* Saludo personalizado: Escribe una función llamada saludar que tome un parámetro nombre y devuelva 
+un saludo personalizado, por ejemplo, "¡Hola, María!".*/
+// Definición de la función saludo que recibe un parámetro nombre
+
+function saludar(nombre) {
+    return "¡Hola, " + nombre + "!!!!!!!!!!!!!1";
+}
+console.log(saludar('Juan'))
