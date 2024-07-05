@@ -1,0 +1,36 @@
+<!--MANEJO DE EVENTOS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO-9</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+</head>
+<body> 
+    <div  id="app">
+        <button class="btn indigo darken-4" v-on:click="contador++">haz clic</button>
+        {{contador}}
+        <hr>
+        <button class="btn indigo darken-4" @mouseover="(estado = !estado)">coloca el puntero sobre mi </button>
+        Estado mouse: {{estado}}
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    const app = {
+        data() {
+            return {
+                contador : 0 ,
+                estado : false
+            }
+        }
+    }
+    Vue.createApp(app).mount("#app");
+    </script>
+</body>
+</html>
