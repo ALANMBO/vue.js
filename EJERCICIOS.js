@@ -35,7 +35,7 @@ var pasteles =  20 ,  galletas = 5, helados = 10 , sumaDePostres = 0
 //dulces de helados  = 10 monedas * 20 = 200
 
 sumaDePostres = pasteles * 10 + galletas * 20 + helados * 20
-document.write("LA SUMA DE LOS POSTRES ES DE :" + sumaDePostres) 
+document.write("LA SUMA DE LOS POSTRES ES DE :" + sumaDePostres + "<br>") 
 
 
 
@@ -100,6 +100,72 @@ si un usuario puede registrarse. Escribe una situación en la que el programa im
     }else{
         console.log("Lo siento, eres menor de edad, no puedes registrarte")
     }
+/* Ejercicio 1: Evaluación de Calificaciones
+Descripción: Imagina que eres un profesor y 
+necesitas evaluar las calificaciones de tus estudiantes para 
+determinar si han aprobado o reprobado.
+
+Condiciones:
+
+Una calificación de 60 o más significa que el estudiante ha aprobado.
+Una calificación de menos de 60 significa que el estudiante ha reprobado. */
+
+let calificaciónDelEstudiante = 75
+
+if(calificaciónDelEstudiante >= 60){
+    document.write("APROBO!!!!!!!" + "<br>")
+}else{
+    document.write("REPROBO:("+ "<br>")
+} 
+//OPERADOR TERNARIO
+let calificaciónDelEstudiante1 = 55
+var resultado =  (calificaciónDelEstudiante1 >= 60 ) ? "APROBO!!!!!!!" : "REPROBO:(" 
+document.write(resultado + "<br>")
+
+/* Ejercicio 3: Clasificación de Productos por Precio
+Descripción: En una tienda, los productos se clasifican en 
+diferentes categorías según su precio.
+
+Condiciones:
+
+Un producto con un precio menor a 20 se clasifica como "Barato".
+Un producto con un precio entre 20 y 100 (inclusive) se clasifica como 
+"Moderado".
+Un producto con un precio mayor a 100 se clasifica como "Caro". */
+
+var PreciosDeMercado = 15;
+if(PreciosDeMercado < 20 ){
+    document.write("BARATO!!!!!"+ "<br>")
+}else if (PreciosDeMercado >=  20 && PreciosDeMercado <= 100){
+    document.write("MODERADO!!!!!" + "<br>")
+}else{
+    document.write("CARO :O" + "<br>")
+}
+//OPERADOR TERNARIO
+
+var precio = 150;
+
+var resultadodeMercado = (precio < 20) ? "BARATO!!!!!" :
+                (precio <= 100) ? "MODERADO!!!!!" :
+                "CARO :O" + "<br>"
+
+document.write(resultadodeMercado)
+
+//MISMOS EJERCICIOS PERO CON SWITCH
+var calificacionDeEstudiante = 55;
+
+switch(true) {
+    case calificacionDeEstudiante >= 60:
+        document.write("APROBASTE");
+        break;
+    case calificacionDeEstudiante < 60:
+        document.write("REPROBASTE");
+        break;
+    default:
+        document.write("SOLO HAY DOS OPCIONES 1 Y 2, PONGA UN NUMERO VALIDO");
+}
+
+
 /* Ejercicio 1: Evaluación de Día de la Semana:
 Imagina que tienes una variable llamada diaSemana que contiene un número del 1 al 7,
 donde 1 representa el lunes y 7 el domingo. Escribe un ejercicio que imprima por pantalla
