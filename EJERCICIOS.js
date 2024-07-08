@@ -155,15 +155,18 @@ document.write(resultadodeMercado)
 var calificacionDeEstudiante = 55;
 
 switch(true) {
-    case calificacionDeEstudiante >= 60:
-        document.write("APROBASTE");
-        break;
-    case calificacionDeEstudiante < 60:
-        document.write("REPROBASTE");
-        break;
-    default:
-        document.write("SOLO HAY DOS OPCIONES 1 Y 2, PONGA UN NUMERO VALIDO");
+    case calificacionDeEstudiante >= 60:document.write("APROBASTE");break;
+    case calificacionDeEstudiante < 60:document.write("REPROBASTE" + "<br>");break;
+    default:document.write("LA CALIFICACIÓN NO PUEDE EXEDER DE LOS 100 PUNTOS");
 }
+
+var PreciosDeMercado1 = 80
+switch(true){
+    case PreciosDeMercado1 < 20 : document.write("BARATO:)");break
+    case PreciosDeMercado1 >= 20 && PreciosDeMercado1 <= 100:document.write("MODERADO");break;
+    default : document.write("CARO");break
+}
+
 
 
 /* Ejercicio 1: Evaluación de Día de la Semana:
