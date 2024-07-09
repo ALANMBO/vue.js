@@ -1,4 +1,84 @@
-// VARIABLES
+//TEMPLATE  LITERALS
+
+let nombre = 'pedro'
+function getSaludo(nombre){
+// Concatenamos la cadena 'hola' con el nombre recibido
+    return 'hola' + nombre
+}
+document.write(`Esto es un saludo : ${getSaludo(nombre)}` + '<br>' + '<hr>' )
+
+//OBJECT LITERALS
+const persona = {
+    nombre: 'pedro',
+    apellido: 'gonzalez',
+    edad:20,
+    direccion: {
+        ciudad: 'medellin',
+        zip: 123456,
+        lat : 10.123,
+        lng: 11.123
+    }
+}
+document.write(persona.nombre + '<br>')
+document.write(persona.apellido + '<br>')
+document.write(persona.direccion.ciudad + '<br>')
+document.write(persona.direccion.lat + '<br>')
+document.write(persona.direccion.lng + '<br>' + '<hr>')
+console.log(persona)
+
+//ARRAYS 
+
+const arreglo = [1,2,3,4,5,6,7,8,9,10]
+arreglo.push(11)
+
+const arreglo2 = [...arreglo] //METODO SPREAD
+arreglo2.push(12)
+
+const arreglo3 = arreglo2.map(function(x){ 
+        return x*2
+}) //METODO MAP
+
+
+document.write(arreglo + '<hr>')
+document.write('ARREGLO 2 :' , arreglo2 + '<br>' + '<hr>')
+document.write(arreglo3 + '<br>' + '<hr>')
+
+//FUNCIONES FLECHAS
+
+const heroes = [
+    {
+        id: 1,
+        name: 'Spiderman'
+    },
+    {
+        id: 2,
+        name: 'Superman'
+    }]
+
+const getHeroeById = (id) => {
+    return heroes.find(heroe => heroe.id === id)
+}
+
+document.write(getHeroeById(1).name + '<br>' + '<hr>')
+
+
+//DESESTRUCTURACION DE OBJETOS
+const person ={
+    name: 'pedro',
+    age: 20,
+    codeName: 'pedro',
+}
+const {name, age, codeName,power = 'fuerza'} = person
+
+const createHero = ({name, age, codeName, power = 'fuerza' }) =>
+    ({
+        id: 12354,
+        name,
+        age,
+        codeName,
+        power
+    })
+console.log(createHero(person))
 /* Ejercicio 1: El Cofre de las Gemas
 Imagina que tienes un cofre con tres tipos de gemas: rubíes, zafiros y 
 esmeraldas. Cada gema tiene un valor diferente en monedas de oro: los rubíes
@@ -12,7 +92,7 @@ var cantidadRubies = 7, cantidadZafiros = 1 ,  cantidadEsmeraldas = 2
 
 var sumaGemas = rubies * cantidadRubies + zafiros * cantidadZafiros + esmeraldas * cantidadEsmeraldas;
 
-document.write("EL VALOR TOTAL ES: " + sumaGemas + "<br>")
+document.write("EL VALOR TOTAL ES: " + sumaGemas + "<br>" + '<hr>')
 
 
 /* Ejercicio 2: La Tienda de Postres
@@ -35,7 +115,7 @@ var pasteles =  20 ,  galletas = 5, helados = 10 , sumaDePostres = 0
 //dulces de helados  = 10 monedas * 20 = 200
 
 sumaDePostres = pasteles * 10 + galletas * 20 + helados * 20
-document.write("LA SUMA DE LOS POSTRES ES DE :" + sumaDePostres + "<br>") 
+document.write("LA SUMA DE LOS POSTRES ES DE :" + sumaDePostres + "<br>" + '<hr>') 
 
 
 
@@ -115,12 +195,12 @@ let calificaciónDelEstudiante = 75
 if(calificaciónDelEstudiante >= 60){
     document.write("APROBO!!!!!!!" + "<br>")
 }else{
-    document.write("REPROBO:("+ "<br>")
+    document.write("REPROBO:("+ "<br>" + '<hr>')
 } 
 //OPERADOR TERNARIO
 let calificaciónDelEstudiante1 = 55
 var resultado =  (calificaciónDelEstudiante1 >= 60 ) ? "APROBO!!!!!!!" : "REPROBO:(" 
-document.write(resultado + "<br>")
+document.write(resultado + "<br>" + '<hr>')
 
 /* Ejercicio 3: Clasificación de Productos por Precio
 Descripción: En una tienda, los productos se clasifican en 
@@ -139,7 +219,7 @@ if(PreciosDeMercado < 20 ){
 }else if (PreciosDeMercado >=  20 && PreciosDeMercado <= 100){
     document.write("MODERADO!!!!!" + "<br>")
 }else{
-    document.write("CARO :O" + "<br>")
+    document.write("CARO :O" + "<br>" + '<hr>')
 }
 //OPERADOR TERNARIO
 
@@ -147,7 +227,7 @@ var precio = 150;
 
 var resultadodeMercado = (precio < 20) ? "BARATO!!!!!" :
                 (precio <= 100) ? "MODERADO!!!!!" :
-                "CARO :O" + "<br>"
+                "CARO :O" + "<br>" + '<hr>'
 
 document.write(resultadodeMercado)
 
@@ -163,7 +243,7 @@ switch(true) {
 var PreciosDeMercado1 = 80
 switch(true){
     case PreciosDeMercado1 < 20 : document.write("BARATO:)");break
-    case PreciosDeMercado1 >= 20 && PreciosDeMercado1 <= 100:document.write("MODERADO");break;
+    case PreciosDeMercado1 >= 20 && PreciosDeMercado1 <= 100:document.write("MODERADO"+ "<hr>");break;
     default : document.write("CARO");break
 }
 
