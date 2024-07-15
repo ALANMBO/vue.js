@@ -1,4 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
-    "quokka.automaticRestart": false
+    "quokka.automaticRestart": false,
+   // "type": true,
+    
 }
